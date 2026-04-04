@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d",
+    "title": "Portfolio Website",
+    "description": "A personal portfolio website to showcase projects and skills.",
+    "tag": ["HTML", "CSS", "JavaScript"],
+    "repoLink": "https://github.com/username/portfolio",
+    "demoLink": "https://username.github.io/portfolio"
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+    "title": "E-commerce App",
+    "description": "A full-stack e-commerce application with cart and payment integration.",
+    "tag": ["React", "Node.js", "MongoDB"],
+    "repoLink": "https://github.com/username/ecommerce-app",
+    "demoLink": "https://ecommerce-demo.com"
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1525182008055-f88b95ff7980",
+    "title": "Chat Application",
+    "description": "A real-time chat application using WebSockets.",
+    "tag": ["Socket.io", "Express", "React"],
+    "repoLink": "https://github.com/username/chat-app",
+    "demoLink": "https://chat-app-demo.com"
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
+    "title": "Task Manager",
+    "description": "A task management app with CRUD operations and authentication.",
+    "tag": ["Vue", "Firebase"],
+    "repoLink": "https://github.com/username/task-manager",
+    "demoLink": "https://task-manager-demo.com"
+  }
+]
