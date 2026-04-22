@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+:root{
+    --glass-bg: rgba(12, 18, 25, 0.46);
+    --glass-border: rgba(255, 255, 255, 0.24);
+    --text-main: #f5f8ff;
+    --text-soft: rgba(245, 248, 255, 0.78);
+}
+
 html,body,#root{
     height:100%;
     width: 100%;
@@ -18,4 +25,57 @@ main{
     background-position: center;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
+
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+        inset: auto;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    &::before{
+        width: 38vw;
+        height: 38vw;
+        top: -10vw;
+        left: -8vw;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(110, 197, 255, 0.45), transparent 70%);
+        filter: blur(16px);
+    }
+
+    &::after{
+        width: 34vw;
+        height: 34vw;
+        bottom: -12vw;
+        right: -6vw;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(68, 232, 153, 0.28), transparent 72%);
+        filter: blur(18px);
+    }
+}
+
+nav,
+.dock,
+.window,
+.window-loading{
+    position: relative;
+    z-index: 1;
+}
+
+.window-loading{
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-main);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    backdrop-filter: blur(14px);
+    padding: 0.55rem 1rem;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    letter-spacing: 0.02em;
 }

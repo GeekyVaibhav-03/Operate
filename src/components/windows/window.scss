@@ -1,36 +1,49 @@
 .window{
-    
-    background-color: black;
-    border-radius: 0.6rem;
-    color: rgba(208, 204, 204, 0.992);
+    background: linear-gradient(180deg, rgba(8, 12, 18, 0.9), rgba(7, 10, 14, 0.86));
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 20px 48px rgba(3, 8, 14, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    border-radius: 0.9rem;
+    color: rgba(229, 235, 245, 0.98);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     font-weight: 500;
     height: 100%;
-    cursor: pointer;
+    cursor: default;
 
 
     .nav{
         display: flex;
-        padding: 0.5rem;
+        padding: 0.6rem 0.75rem;
         gap:0.75rem;
-        border-bottom: 1px solid rgba(245, 245, 245, 0.453);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         align-items: center;
+        background: linear-gradient(180deg, rgba(25, 36, 50, 0.8), rgba(25, 36, 50, 0.35));
+        cursor: grab;
+
+        &:active{
+            cursor: grabbing;
+        }
 
 
         .dots{
             display: flex;
-            gap: 0.25rem;
+            gap: 0.34rem;
             
             .dot{
-                height: 15px;
-            width: 15px;
+                height: 14px;
+            width: 14px;
             border-radius: 50%;
             background-color: white;
+            transition: transform 180ms ease, filter 180ms ease;
+            cursor: pointer;
 
             
+            }
+            .dot:hover{
+                transform: scale(1.1);
+                filter: brightness(1.08);
             }
             .red{
                 background-color: rgb(211, 44, 44);
@@ -43,6 +56,12 @@
             }
             
         }
+
+        .title{
+            color: rgba(239, 244, 252, 0.92);
+            font-size: 0.88rem;
+            letter-spacing: 0.02em;
+        }
         
     }
 
@@ -50,8 +69,19 @@
         flex: 1;
         min-height: 0;
     }
+
+    &.is-minimized{
+        .main-content{
+            display: none;
+        }
+
+        .nav{
+            border-bottom: none;
+        }
+    }
+
     *::-webkit-scrollbar{
-        width: 0.5rem;
+        width: 0.46rem;
     }
 
         *::-webkit-scrollbar-track{
@@ -59,7 +89,7 @@
         }
     
         *::-webkit-scrollbar-thumb{
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(180, 199, 223, 0.48);
             border-radius: 1rem;
         }
 

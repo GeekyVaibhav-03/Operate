@@ -2,23 +2,30 @@ import React from "react";
 import "./dock.scss";
 
 const Dock = ({ windowState, setWindowState }) => {
+  const toggleApp = (key) => {
+    setWindowState((state) => ({ ...state, [key]: !state[key] }));
+	};
+
   return (
     <footer className="dock">
       <div
-        onClick={() => setWindowState((state) => ({ ...state, github: true }))}
-        className="icon github"
+        onClick={() => toggleApp("github")}
+        className={`icon github ${windowState.github ? "is-active" : ""}`}
+        aria-label="Open GitHub"
       >
         <img src="/doc-icon/github.svg" alt="" />
       </div>
       <div
-        onClick={() => setWindowState((state) => ({ ...state, note: true }))}
-        className="icon note"
+        onClick={() => toggleApp("note")}
+        className={`icon note ${windowState.note ? "is-active" : ""}`}
+        aria-label="Open Notes"
       >
         <img src="/doc-icon/note.svg" alt="" />
       </div>
       <div
-        onClick={() => setWindowState((state) => ({ ...state, pdf: true }))}
-        className="icon pdf"
+        onClick={() => toggleApp("pdf")}
+        className={`icon pdf ${windowState.pdf ? "is-active" : ""}`}
+        aria-label="Open Resume"
       >
         <img src="/doc-icon/pdf.svg" alt="" />
       </div>
@@ -26,8 +33,9 @@ const Dock = ({ windowState, setWindowState }) => {
         <img src="/doc-icon/calender.svg" alt="" />
       </div>
       <div
-        onClick={() => setWindowState((state) => ({ ...state, spotify: true }))}
-        className="icon spotify"
+        onClick={() => toggleApp("spotify")}
+        className={`icon spotify ${windowState.spotify ? "is-active" : ""}`}
+        aria-label="Open Spotify"
       >
         <img src="/doc-icon/spotify.svg" alt="" />
       </div>
@@ -38,8 +46,9 @@ const Dock = ({ windowState, setWindowState }) => {
         <img src="/doc-icon/link.svg" alt="" />
       </div>
       <div
-        onClick={() => setWindowState((state) => ({ ...state, cli: true }))}
-        className="icon cli"
+        onClick={() => toggleApp("cli")}
+        className={`icon cli ${windowState.cli ? "is-active" : ""}`}
+        aria-label="Open Terminal"
       >
         <img src="/doc-icon/cli.svg" alt="" />
       </div>
